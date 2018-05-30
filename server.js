@@ -12,7 +12,7 @@ var cookieSession = require('cookie-session');
 var passportSetup = require('./config/passport-setup');
 var passport = require('passport');
 var keys = require('./config/keys.js');
-var config    = require(__dirname + '/../config/config.json')[env];
+var config = require('./config/config.json')[env];
 
 
 // Sets up the Express App
