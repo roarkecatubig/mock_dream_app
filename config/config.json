@@ -4,8 +4,7 @@
     "password": "root",
     "database": "dreams_db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port": 3307
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
@@ -15,7 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "user_env_variable": "JAWSDB_URL",
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }

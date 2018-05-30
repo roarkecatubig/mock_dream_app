@@ -17,18 +17,7 @@ var keys = require('./config/keys.js');
 // Sets up the Express App
 // =============================================================
 var app = express();
-
-// if (process.env.JAWSDB_URL) {
-//   connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
-//   connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'root',
-//     database: 'dreams_db'
-
-//   });
-// };
+var PORT = process.env.PORT || 8000;
 
 // Passport set up
 app.use(cookieSession({
@@ -69,7 +58,6 @@ require("./routes/html-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-var PORT = process.env.PORT || 8000;
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
