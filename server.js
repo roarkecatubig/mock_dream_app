@@ -12,7 +12,7 @@ var cookieSession = require('cookie-session');
 var passportSetup = require('./config/passport-setup');
 var passport = require('passport');
 var keys = require('./config/keys.js');
-var config = require('./config/config.json')[env];
+// var config = require('./config/config.json')[env];
 
 
 // Sets up the Express App
@@ -23,13 +23,13 @@ var app = express();
 //   var connection = mysqlcreateConnection(process.env.JAWSDB_URL)
 // }
 
-if (config.use_env_variable) {
-  var sequelize = new 
-Sequelize(process.env[config.use_env_variable]);
-} else {
-  var sequelize = new Sequelize(config.database, config.username, 
-config.password, config);
-}
+// if (config.use_env_variable) {
+//   var sequelize = new 
+// Sequelize(process.env[config.use_env_variable]);
+// } else {
+//   var sequelize = new Sequelize(config.database, config.username, 
+// config.password, config);
+// }
 
 // Passport set up
 app.use(cookieSession({
