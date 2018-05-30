@@ -19,6 +19,10 @@ var keys = require('./config/keys.js');
 var app = express();
 var PORT = process.env.PORT || 8000;
 
+if (process.env.JAWSDB_URL) {
+  var connection = mysqlcreateConnection(process.env.JAWSDB_URL)
+}
+
 // Passport set up
 app.use(cookieSession({
   maxAge: 1800000,
