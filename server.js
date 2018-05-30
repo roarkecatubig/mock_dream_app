@@ -30,8 +30,6 @@ if (process.env.JAWSDB_URL) {
   });
 };
 
-var PORT = process.env.PORT || 8000;
-
 // Passport set up
 app.use(cookieSession({
   maxAge: 1800000,
@@ -71,6 +69,7 @@ require("./routes/html-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
+var PORT = process.env.PORT || 8000;
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
